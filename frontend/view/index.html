@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Chat App</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome, <span id="displayUsername"></span></h2>
+        <label>Select Chat Type:</label>
+        <select id="chatType" onchange="toggleChatSelection()">
+            <option value="group">Group Chat</option>
+            <option value="private">Private Chat</option>
+        </select>
+
+        <div id="groupChatSelection">
+            <label>Select a Group:</label>
+            <select id="groupRoom">
+                <option value="general">General</option>
+                <option value="devops">DevOps</option>
+                <option value="cloud">Cloud Computing</option>
+            </select>
+        </div>
+
+        <div id="privateChatSelection" style="display: none;">
+            <label>Select a User:</label>
+            <select id="privateUser"></select>
+        </div>
+
+        <button onclick="joinChat()">Enter Chat</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="../public/script.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+</body>
+</html>
